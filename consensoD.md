@@ -2,16 +2,16 @@
 
 ## Contenido:
 
-I. Introducción
-II. Consenso Distribuído en bitcoins
-III. Otras aplicaciones
+ I. Introducción
+ II. Consenso Distribuído en bitcoins
+ III. Otras aplicaciones
       - Consenso distribuído en Elecciones
       - Consenso distribuído en Energía
       - Consenso distribuído en IoT
       - Consenso distribuído en Subastas
-IV. Experimento con Ethereum - Programar un sistema de votación
-V. Nuevas fronteras - ideas y conclusiones
-VI. Bibliografía
+ IV. Experimento con Ethereum - Programar un sistema de votación
+ V. Nuevas fronteras - ideas y conclusiones
+ VI. Bibliografía
 
 ## I. Introducción
 
@@ -37,4 +37,6 @@ Una vez hemos analizado cómo funciona el sistema distribuído en una red P2P ap
 
 Es interesante como, el proceso anteriormente descrito puede agregarse a otros conceptos clásicos, como una votación democrática. Un ejemplo de esto es Horizon State. En su _white paper_, Horizon State explica cómo utiliza la plataforma de Ethereum para desplegar sus contratos (el sistema de votación) y que además [liberan en github](). Los contratos que han realizado se basan, a su vez, en documentación que la propia organización de Ethereum cede bajo el nombre de "Cómo crear una democracia en blockchain".
 
-La idea principal es asegurar el voto único del usuario pero a su vez mantener el anonimato y la privacidad de su voto, en consecuencia, sin renunciar a una vía actualizada de voto. En este caso el voto será el _token_, y éste será verificado por el resto de nodos, y añadido a la lista de votos realizados una vez firmado de forma irrevocable al actualizarse la red. De este modo, al igual que ocurriría con los BTC, un ataque supone una cantidad de variables casi imposible de asumir (el momento adecuado, una capacidad computacional importante, etc) para cada uno de los votos, lo que lo convierte en un sistema de votación bastante seguro. Además, defienden, el coste de la votación es mucho menos que usando un sistema convencional.    
+La idea principal es asegurar el voto único del usuario pero a su vez mantener el anonimato y la privacidad de su voto, en consecuencia, sin renunciar a una vía actualizada de voto. En este caso el voto será el _token_, y éste será verificado por el resto de nodos, y añadido a la lista de votos realizados una vez firmado de forma irrevocable al actualizarse la red. De este modo, al igual que ocurriría con los BTC, un ataque supone una cantidad de variables casi imposible de asumir (el momento adecuado, una capacidad computacional importante, etc) para cada uno de los votos, lo que lo convierte en un sistema de votación bastante seguro. Además, defienden, el coste de la votación es mucho menos que usando un sistema convencional.   
+
+### En energía

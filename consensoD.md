@@ -2,16 +2,16 @@
 
 ## Contenido:
 
- I. Introducción
- II. Consenso Distribuído en bitcoins
- III. Otras aplicaciones
+ 1. Introducción
+ 2. Consenso Distribuído en bitcoins
+ 3. Otras aplicaciones
       - Consenso distribuído en Elecciones
       - Consenso distribuído en Energía
       - Consenso distribuído en IoT
       - Consenso distribuído en Subastas
- IV. Experimento con Ethereum - Programar un sistema de votación
- V. Nuevas fronteras - ideas y conclusiones
- VI. Bibliografía
+ 4. Experimento con Ethereum - Programar un sistema de votación
+ 5. Nuevas fronteras - ideas y conclusiones
+ 6. Bibliografía
 
 ## I. Introducción
 

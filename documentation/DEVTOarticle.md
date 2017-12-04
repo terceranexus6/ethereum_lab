@@ -85,7 +85,7 @@ function burnFrom(address _from, uint256 _value) public returns (bool success) {
     return true;
 }
 ```
-Also, a nice function would be the ones who settles POW (proof of work) for getting the tokens and signing the transactions.
+Also, a nice function would be the one who settles POW (proof of work) for getting the tokens and signing the transactions.
 
 
 ```
@@ -97,3 +97,29 @@ uint current = 1; // hehe try to guess the cubic root of the number. Imposible t
         current = next;   // next test
     }
 ```
+But unfortunately a computer finds this very easy, so maybe we should create a better Proof of work, that supposses a real challenge for a machine (those filthy smart toasters!):
+
+```
+    bytes32 public currentChallenge;                         // The coin starts with a challenge
+    uint public timeOfLastProof;                             // Variable to keep track of when rewards were given
+    uint public difficulty = 10**32;                         // Difficulty starts reasonably low
+
+    function proofOfWork(uint nonce){
+        bytes8 n = bytes8(sha3(nonce, currentChallenge));    // Generate a random hash based on input
+        require(n >= bytes8(difficulty));                   // Check if it's under the difficulty
+
+        uint timeSinceLastProof = (now - timeOfLastProof);  // Calculate time since last reward was given
+        require(timeSinceLastProof >=  5 seconds);         // Rewards cannot be given too quickly
+        balanceOf[msg.sender] += timeSinceLastProof / 60 seconds;  // The reward to the winner grows by the minute
+
+        difficulty = difficulty * 10 minutes / timeSinceLastProof + 1;  // Adjusts the difficulty
+
+        timeOfLastProof = now;                              // Reset the counter
+        currentChallenge = sha3(nonce, currentChallenge, block.blockhash(block.number - 1));  // Save a hash that will be used as the next proof
+    }
+```
+
+Once our cruptocurrency looks just like we wanted we can deploy it using the ethereum wallet sandbox. The interface is quite simple, only add the code in the editor box, fill the options you coded (name or symbol, for example, good news you can use emoticons!) and click in Deploy. For this only set the **correct Network** (virtual sandbox, there are a couple), click on **contracts** and look for the "**DEPLOY NEW CONTRACT**" button.
+
+![](https://www.ethereum.org/images/tutorial/deploy-new-contract.png)
+![](https://www.ethereum.org/images/tutorial/edit-contract.png)

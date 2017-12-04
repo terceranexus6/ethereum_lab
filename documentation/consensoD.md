@@ -109,4 +109,23 @@ Los detalles de la transferencia también se especifican en los bloques de contra
 
  Evidentemente el trabajo computacional de esta prueba es mínimo, pero por ejemplo puede intercambiarse por una prueba que implique generar _hashes_ de varios números hasta que encuentre uno menor a la dificultad dada. Existen también [otros sistemas](https://blog.ethereum.org/2015/12/28/understanding-serenity-part-2-casper/) que ya están siendo utilizados.
 
- UNa vez que tenemos definido nuestro token y los detalles de las transacciones, podemos empezar a trabajar sobre los nodos. Los nodos pueden representar a usuarios individuales o bots que interaccionan automáticamente, pero también podemos trabajar con asociaciones de nodos (que exiten dentro del propio blockchain) y que a su vez pueden tener diferentes esquemas. Por ejemplo, podemos trabajar con uno de los esquemas previamente definidos, una votación democrática, con un líder que organiza a los miembros del grupo, pero cada miembro tiene un voto (el token) y pueden automatizarse el conteo de forma limpia y eficaz. Podemos encontrar un [ejemplo de este contrato]((https://github.com/terceranexus6/ethereum_lab/tree/master/contracts/demo.cpp) en el anexo de contratos. Puede modificarse ligeramente este mismo modelo para crear, en lugar de un organizador y varios usuarios iguales, usuarios con distinto peso dependiendo, por ejemplo, de su solvencia en tokens. También es posible implementar un sistema de _democracia líquida_ en el que un votante puede delegar su voto en otro usuario. De este modo, la transferencia de tokens le cedería al receptor el voto del emisor.
+ UNa vez que tenemos definido nuestro token y los detalles de las transacciones, podemos empezar a trabajar sobre los nodos. Los nodos pueden representar a usuarios individuales o bots que interaccionan automáticamente, pero también podemos trabajar con asociaciones de nodos (que exiten dentro del propio blockchain) y que a su vez pueden tener diferentes esquemas. Por ejemplo, podemos trabajar con uno de los esquemas previamente definidos, una votación democrática, con un líder que organiza a los miembros del grupo, pero cada miembro tiene un voto (el token) y pueden automatizarse el conteo de forma limpia y eficaz. Podemos encontrar un [ejemplo de este contrato](https://github.com/terceranexus6/ethereum_lab/tree/master/contracts/demo.cpp) en el anexo de contratos. Puede modificarse ligeramente este mismo modelo para crear, en lugar de un organizador y varios usuarios iguales, usuarios con distinto peso dependiendo, por ejemplo, de su solvencia en tokens.
+
+```
+uint quorum = 0;
+uint seh = 0;
+uint nah = 0;
+
+for (uint i = 0; i <  p.votos.length; ++i) {
+    Vote v = p.votos[i];
+    uint pesoDelVoto = compartirDireccionToken.balanceDel(v.votante);
+    quorum += pesoDelVoto;
+    if (v.inSupport) {
+        seh += pesoDelVoto;
+    } else {
+        nah += pesoDelVoto;
+    }
+}
+```
+
+ También es posible implementar un sistema de [_democracia líquida_](https://github.com/terceranexus6/ethereum_lab/tree/master/contracts/democracialiq.cpp) en el que un votante puede delegar su voto en otro usuario. De este modo, la transferencia de tokens le cedería al receptor el voto del emisor.

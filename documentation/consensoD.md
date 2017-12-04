@@ -1,62 +1,62 @@
-# Consenso DistribuÃ­do
+# Consenso Distribuído
 
 ## Contenido:
 
- 1. IntroducciÃ³n
- 2. Consenso DistribuÃ­do en bitcoins
+ 1. Introducción
+ 2. Consenso Distribuído en bitcoins
  3. Otras aplicaciones
-      - Consenso distribuÃ­do en Elecciones
-      - Consenso distribuÃ­do en EnergÃ­a
-      - Consenso distribuÃ­do en IoT
- 4. Experimento con Ethereum - Programar un sistema de votaciÃ³n
+      - Consenso distribuído en Elecciones
+      - Consenso distribuído en Energía
+      - Consenso distribuído en IoT
+ 4. Experimento con Ethereum - Programar un sistema de votación
  5. Nuevas fronteras - ideas y conclusiones
- 6. BibliografÃ­a
+ 6. Bibliografía
 
-## I. IntroducciÃ³n
+## I. Introducción
 
-La base fundamental del **consenso distribuÃ­do** estÃ¡ en la idea de compartir el control de la evoluciÃ³n de datos en una red comÃºn. Uno de los ejemplos mÃ¡s conocidos de Consenso DistribuÃ­do es Blockchain, una gran base de datos distribuÃ­da entre varios participantes, o nodos. Este sistema estÃ¡ contenido en un _ledger_ que contiene el historial de todas las transacciones actualizadas. Los nodos estÃ¡n conectados en una red descentralizada, y se comunican a travÃ©s de un protocolo concreto.
+La base fundamental del **consenso distribuído** está en la idea de compartir el control de la evolución de datos en una red común. Uno de los ejemplos más conocidos de Consenso Distribuído es Blockchain, una gran base de datos distribuída entre varios participantes, o nodos. Este sistema está contenido en un _ledger_ que contiene el historial de todas las transacciones actualizadas. Los nodos están conectados en una red descentralizada, y se comunican a través de un protocolo concreto.
 
-La clave que mueve todo este sistema, estÃ¡ alrededor de un tipo concreto de mensajes llamados "token", estos token contienen informaciÃ³n, que viaja encriptada, y puede contener cualquier cosa que digitalmente se permita, como dinero (este es el caso de los bitcoins), un voto, un alquiler, energÃ­a, cualquier cosa. En relaciÃ³n con economÃ­a (impulso inicial para este sistema) se espera que el consenso distribuÃ­do reduzca el riesgo operacional, y aunque incluso una de las criptomonedas de mÃ¡s peso (bitcoins) no han conseguido despegar con toda la fuerza que podÃ­a esperarse, varias startups, usuarios e incluso bancos estÃ¡n apostando por este sistema.
+La clave que mueve todo este sistema, está alrededor de un tipo concreto de mensajes llamados "token", estos token contienen información, que viaja encriptada, y puede contener cualquier cosa que digitalmente se permita, como dinero (este es el caso de los bitcoins), un voto, un alquiler, energía, cualquier cosa. En relación con economía (impulso inicial para este sistema) se espera que el consenso distribuído reduzca el riesgo operacional, y aunque incluso una de las criptomonedas de más peso (bitcoins) no han conseguido despegar con toda la fuerza que podía esperarse, varias startups, usuarios e incluso bancos están apostando por este sistema.
 
-## II. Consenso distribuÃ­do en bitcoins
+## II. Consenso distribuído en bitcoins
 
-Dado que el sistema se planteÃ³ inicialmente para su uso con las criptomonedas, es conveniente comprender cÃ³mo funciona este sistema con los Bitcoins. Para ello, pretendo basarme en la explicaciÃ³n de una transacciÃ³n corriente.
+Dado que el sistema se planteó inicialmente para su uso con las criptomonedas, es conveniente comprender cómo funciona este sistema con los Bitcoins. Para ello, pretendo basarme en la explicación de una transacción corriente.
 
-Alice tiene una cartera con x cantidad de bitcoins, y pretende comprar un cafÃ© en el puesto de Bob, que tiene otra cartera. Para ello, se _propone_ una transacciÃ³n por el valor en BTC entre Alice y Bob. De este modo, si la transacciÃ³n queda aprobada, la custodia de esa cantidad de BTC queda cedida irrevocablemente a la cartera de Bob. Para que esto ocurra, la transacciÃ³n pasa a una cadena de transacciones pendientes de resolverse, en una red compuesta por varios nodos. La _firma_ de esta transacciÃ³n depende de un problema matemÃ¡tico, que requiere de trabajo computacional para resolverse, y que una vez resuelto, actualizarÃ¡ la red y declararÃ¡ la transacciÃ³n como hecha, de forma que esa misma transacciÃ³n no pueda modificarse, y esta informaciÃ³n actualizada llegarÃ¡ al resto de nodos. En este paso encontramos lo que se denomina _mining_, es decir, el proceso por el cual los nodos compiten por procesar ese trabajo matemÃ¡tico a cambio de una recompensa en BTC que se crea en ese mismo momento, es decir, no son transacciones, si no creaciones de mÃ¡s BTC que posteriormente se moverÃ¡n en transacciones.
+Alice tiene una cartera con x cantidad de bitcoins, y pretende comprar un café en el puesto de Bob, que tiene otra cartera. Para ello, se _propone_ una transacción por el valor en BTC entre Alice y Bob. De este modo, si la transacción queda aprobada, la custodia de esa cantidad de BTC queda cedida irrevocablemente a la cartera de Bob. Para que esto ocurra, la transacción pasa a una cadena de transacciones pendientes de resolverse, en una red compuesta por varios nodos. La _firma_ de esta transacción depende de un problema matemático, que requiere de trabajo computacional para resolverse, y que una vez resuelto, actualizará la red y declarará la transacción como hecha, de forma que esa misma transacción no pueda modificarse, y esta información actualizada llegará al resto de nodos. En este paso encontramos lo que se denomina _mining_, es decir, el proceso por el cual los nodos compiten por procesar ese trabajo matemático a cambio de una recompensa en BTC que se crea en ese mismo momento, es decir, no son transacciones, si no creaciones de más BTC que posteriormente se moverán en transacciones.
 
-Una vez que la transacciÃ³n del cafÃ© entre Alice y Bob estÃ¡ firmada por algÃºn nodo de la red y la informaciÃ³n se actualiza, este gesto es irrevocable y esos bitcoins pasan a la custodia de Bob. Alice y Bob pueden mantenerse anÃ³nimos y tener, respectivamente, mÃ¡s de una cartera.
+Una vez que la transacción del café entre Alice y Bob está firmada por algún nodo de la red y la información se actualiza, este gesto es irrevocable y esos bitcoins pasan a la custodia de Bob. Alice y Bob pueden mantenerse anónimos y tener, respectivamente, más de una cartera.
 
-La firma de dicha transacciÃ³n supone que Ã©sta pase a manos de todos los nodos interesados en resolver el problema (y obtener la recompensa) pero no los datos de la transacciÃ³n, si no simplemente su incorporaciÃ³n en el historial. De modo que los usuarios y los motivos se mantienen privados, pero el control del flujo de transacciones es compartido.
+La firma de dicha transacción supone que ésta pase a manos de todos los nodos interesados en resolver el problema (y obtener la recompensa) pero no los datos de la transacción, si no simplemente su incorporación en el historial. De modo que los usuarios y los motivos se mantienen privados, pero el control del flujo de transacciones es compartido.
 
-## III. Otras aplicaciones de Consenso DistribuÃ­do
+## III. Otras aplicaciones de Consenso Distribuído
 
-Una vez hemos analizado cÃ³mo funciona el sistema distribuÃ­do en una red P2P aplicado a los BTC, podemos abarcar el concepto en otros contextos. Algunos de los mÃ¡s punteros para los prÃ³ximos aÃ±os son:
+Una vez hemos analizado cómo funciona el sistema distribuído en una red P2P aplicado a los BTC, podemos abarcar el concepto en otros contextos. Algunos de los más punteros para los próximos años son:
 
 ### En procesos electorales
 
-Es interesante como, el proceso anteriormente descrito puede agregarse a otros conceptos clÃ¡sicos, como una votaciÃ³n democrÃ¡tica. Un ejemplo de esto es Horizon State. En su _white paper_, Horizon State explica cÃ³mo utiliza la plataforma de Ethereum para desplegar sus contratos (el sistema de votaciÃ³n) y que ademÃ¡s [liberan en github](). Los contratos que han realizado se basan, a su vez, en documentaciÃ³n que la propia organizaciÃ³n de Ethereum cede bajo el nombre de "CÃ³mo crear una democracia en blockchain".
+Es interesante como, el proceso anteriormente descrito puede agregarse a otros conceptos clásicos, como una votación democrática. Un ejemplo de esto es Horizon State. En su _white paper_, Horizon State explica cómo utiliza la plataforma de Ethereum para desplegar sus contratos (el sistema de votación) y que además [liberan en github](). Los contratos que han realizado se basan, a su vez, en documentación que la propia organización de Ethereum cede bajo el nombre de "Cómo crear una democracia en blockchain".
 
-La idea principal es asegurar el voto Ãºnico del usuario pero a su vez mantener el anonimato y la privacidad de su voto, en consecuencia, sin renunciar a una vÃ­a actualizada de voto. En este caso el voto serÃ¡ el _token_, y Ã©ste serÃ¡ verificado por el resto de nodos, y aÃ±adido a la lista de votos realizados una vez firmado de forma irrevocable al actualizarse la red. De este modo, al igual que ocurrirÃ­a con los BTC, un ataque supone una cantidad de variables casi imposible de asumir (el momento adecuado, una capacidad computacional importante, etc) para cada uno de los votos, lo que lo convierte en un sistema de votaciÃ³n bastante seguro. AdemÃ¡s, defienden, el coste de la votaciÃ³n es mucho menos que usando un sistema convencional.   
+La idea principal es asegurar el voto único del usuario pero a su vez mantener el anonimato y la privacidad de su voto, en consecuencia, sin renunciar a una vía actualizada de voto. En este caso el voto será el _token_, y éste será verificado por el resto de nodos, y añadido a la lista de votos realizados una vez firmado de forma irrevocable al actualizarse la red. De este modo, al igual que ocurriría con los BTC, un ataque supone una cantidad de variables casi imposible de asumir (el momento adecuado, una capacidad computacional importante, etc) para cada uno de los votos, lo que lo convierte en un sistema de votación bastante seguro. Además, defienden, el coste de la votación es mucho menos que usando un sistema convencional.   
 
-### En energÃ­a
+### En energía
 
-Hace unos meses, una startup llamada [Powerledger](https://tge.powerledger.io) lanzÃ³ la idea de aplicar consenso distribuÃ­do al intercambio de energÃ­a solar a travÃ©s de nodos en una _blockchain_. La idea es dar la opciÃ³n de vender su energÃ­a solar extra a los usuarios sin necesidad de intermediarios en un sistema centralizado. La aplicaciÃ³n pretende llevar un seguimiento del consumo energÃ©tico de cada participante y generar transacciones a tiempo real en base a las necesidades de cada usuario. En la pÃ¡gina web explican los beneficios de darle control a los participantes de la red, ademÃ¡s de la transparencia de las transacciones. Por ahora, tan sÃ³lo han lanzado un evento para generar tokens tradeables en el futuro y han comenzado el desarrollo de la aplicaciÃ³n, pero ya cuentan con millones de euros para llevar a cabo el proyecto.
+Hace unos meses, una startup llamada [Powerledger](https://tge.powerledger.io) lanzó la idea de aplicar consenso distribuído al intercambio de energía solar a través de nodos en una _blockchain_. La idea es dar la opción de vender su energía solar extra a los usuarios sin necesidad de intermediarios en un sistema centralizado. La aplicación pretende llevar un seguimiento del consumo energético de cada participante y generar transacciones a tiempo real en base a las necesidades de cada usuario. En la página web explican los beneficios de darle control a los participantes de la red, además de la transparencia de las transacciones. Por ahora, tan sólo han lanzado un evento para generar tokens tradeables en el futuro y han comenzado el desarrollo de la aplicación, pero ya cuentan con millones de euros para llevar a cabo el proyecto.
 
 ### En IoT
 
-Empresas de peso como IBM ya han empezado a explorar las posibilidades de utilizar el modelo distribuÃ­do en IoT. La idea que IBM quiere implementar es una comunicaciÃ³n directa entre los elementos que componen una red de IoT (como la monitorizaciÃ³n de un entorno) sin necesidad de intermediarios.
+Empresas de peso como IBM ya han empezado a explorar las posibilidades de utilizar el modelo distribuído en IoT. La idea que IBM quiere implementar es una comunicación directa entre los elementos que componen una red de IoT (como la monitorización de un entorno) sin necesidad de intermediarios.
 
-Bajo esta idea se sustenta, por ejemplo, [Filament](https://filament.com), es una empresa que pretende crear un sistema extra seguro de comunicaciÃ³n entre dispositivos hardware, que actualizan la informaciÃ³n en tiempo real y cada dispositivo (nodo) tiene la oportunidad de validar la interacciÃ³n con el entorno (la transacciÃ³n) y aÃ±adir dicha informaciÃ³n (token) a la pila comÃºn. La seguridad del sistema reside en que los posibles ataques en despliegue hacia los dispositivos accediendo a un server principal mediante reconocimiento no son funcionales, y que los ataques a nodos por separado en el momento justo, a parte de ser complicados y costosos, son prÃ¡cticamente inÃ³cuos si no estÃ¡n enmarcados en el contexto global.
+Bajo esta idea se sustenta, por ejemplo, [Filament](https://filament.com), es una empresa que pretende crear un sistema extra seguro de comunicación entre dispositivos hardware, que actualizan la información en tiempo real y cada dispositivo (nodo) tiene la oportunidad de validar la interacción con el entorno (la transacción) y añadir dicha información (token) a la pila común. La seguridad del sistema reside en que los posibles ataques en despliegue hacia los dispositivos accediendo a un server principal mediante reconocimiento no son funcionales, y que los ataques a nodos por separado en el momento justo, a parte de ser complicados y costosos, son prácticamente inócuos si no están enmarcados en el contexto global.
 
-## IV.  Experimento con Ethereum - Programar un sistema de votaciÃ³n
+## IV.  Experimento con Ethereum - Programar un sistema de votación
 
-Como se ha mencionado previamente, Ethereum da la oportunidad de desplegar contratos en su plataforma (cartera de ethereum) tanto en un sandbox virtual sin repercusiÃ³n real como en el sistema principal, usando ETH real. Para la realizaciÃ³n de este apartado, he probado el despliegue en virtual, y mÃ¡s tarde he comprado ETH para realizar un experimento a mÃ­nimo coste (0'0003 ETH) en el sistema central. Para que el experimento funcione deben tenerse en cuenta los elementos fundamentales del consenso distribuÃ­do:
+Como se ha mencionado previamente, Ethereum da la oportunidad de desplegar contratos en su plataforma (cartera de ethereum) tanto en un sandbox virtual sin repercusión real como en el sistema principal, usando ETH real. Para la realización de este apartado, he probado el despliegue en virtual, y más tarde he comprado ETH para realizar un experimento a mínimo coste (0'0003 ETH) en el sistema central. Para que el experimento funcione deben tenerse en cuenta los elementos fundamentales del consenso distribuído:
 
 - Los token
 - Los nodos
 - Las transacciones
 
-Para programar y desplegar un token, en su mÃ­nima expresiÃ³n, serÃ­a:
+Para programar y desplegar un token, en su mínima expresión, sería:
 
 ```
 contract MiToken {
@@ -75,8 +75,36 @@ contract MiToken {
         require(balanceOf[msg.sender] >= _value);           // Comprobar que el emisor tiene solvencia
         require(balanceOf[_to] + _value >= balanceOf[_to]); // Comprobar overflows
         balanceOf[msg.sender] -= _value;                    // Sustraer del emisor
-        balanceOf[_to] += _value;                           // AÃ±adir al receptor
+        balanceOf[_to] += _value;                           // Añadir al receptor
     }
 }
 ```
-Sin embargo, para aÃ±adirle algo de complejidad, existen otras variables a tener en cuenta, como declarar el **nombre**, el **sÃ­mbolo**, notificaciones para clientes, etc. En el [anexo de contratos](https://github.com/terceranexus6/ethereum_lab/tree/master/contracts) se puede encontrar un [ejemplo mÃ¡s completo]() de token. 
+Sin embargo, para añadirle algo de complejidad, existen otras variables a tener en cuenta, como declarar el **nombre**, el **símbolo**, notificaciones para clientes, etc. En el [anexo de contratos](https://github.com/terceranexus6/ethereum_lab/tree/master/contracts) se puede encontrar un [ejemplo más completo](https://github.com/terceranexus6/ethereum_lab/tree/master/contracts/complextoken.cpp) de token.
+
+Los detalles de la transferencia también se especifican en los bloques de contratos de token, por ejemplo podemos observar la implementación de la función `_transfer` que es local y sólo puede usarse dentro del propio contrato que definamos.
+
+```
+    function _transfer(address _from, address _to, uint _value) internal {
+        require (_to != 0x0);                               // previene transferencias a 0x0 address.
+        require (balanceOf[_from] > _value);                // Comprueba solvencia
+        require (balanceOf[_to] + _value > balanceOf[_to]); // Comprueba overflows
+        require(!frozenAccount[_from]);                     // Comprueba si la cuenta esta congelada
+        require(!frozenAccount[_to]);                       // Comprueba si el receptor (su cuenta) está congelada
+        balanceOf[_from] -= _value;                         // Retira del emisor
+        balanceOf[_to] += _value;                           // Añade al receptor
+        Transfer(_from, _to, _value);
+    }
+```
+ Y también pueden automatizarse ventas y compras, función muy útil, por ejemplo, en la aplicación de Consenso Descentralizado de IoT. Para ello, se pueden decinir funciones para ambos procesos y ser llamados en el propio contrato. Por último, pueden definirse funciones para POW (Proof of Work) de forma que agreguemos el esfuerzo matemático para la minería de nuestra moneda. Ets parte es interesante porque podemos añadir la fórmula que deseemos.
+
+ ```
+ uint PruebaActual = 1; // puedes averiguar la raiz cuadrada de este número?
+
+     function premioAlGenio(uint respuesta, uint siguiente) {
+         require(respuesta**3 == PruebaActual); // Si responde mal no continúa
+         balanceOf[msg.sender] += 1;         // Premia a este usuario
+         PruebaActual = siguiente;   // Pone la siguiente prueba
+     }
+ ```
+
+ Evidentemente el trabajo computacional de esta prueba es mínimo, pero por ejemplo puede intercambiarse por una prueba que implique generar _hashes_ de varios números hasta que encuentre uno menor a la dificultad dada. Existen también [otros sistemas](https://blog.ethereum.org/2015/12/28/understanding-serenity-part-2-casper/) que ya están siendo utilizados.

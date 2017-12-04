@@ -129,3 +129,7 @@ for (uint i = 0; i <  p.votos.length; ++i) {
 ```
 
  También es posible implementar un sistema de [_democracia líquida_](https://github.com/terceranexus6/ethereum_lab/tree/master/contracts/democracialiq.cpp) en el que un votante puede delegar su voto en otro usuario. De este modo, la transferencia de tokens le cedería al receptor el voto del emisor.
+
+ Para experimentar con nuestros contratos en el sandbox, tan sólo tenemos que incluir el código en la plataforma de ethereum y desplegarlo. Nos saldrán algunas opciones que debemos rellenar, y una vez desplegado, podemos compartir el contrato con otros usuarios. Podemos utilizarlo tanto con nuestro propio token (definido previamente en otro contrato) como usando ETH real.
+
+ ## V. Nuevas fronteras - ideas y conclusiones

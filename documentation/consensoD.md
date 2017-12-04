@@ -8,7 +8,6 @@
       - Consenso distribuído en Elecciones
       - Consenso distribuído en Energía
       - Consenso distribuído en IoT
-      - Consenso distribuído en Subastas
  4. Experimento con Ethereum - Programar un sistema de votación
  5. Nuevas fronteras - ideas y conclusiones
  6. Bibliografía
@@ -48,3 +47,35 @@ Hace unos meses, una startup llamada [Powerledger](https://tge.powerledger.io) l
 Empresas de peso como IBM ya han empezado a explorar las posibilidades de utilizar el modelo distribuído en IoT. La idea que IBM quiere implementar es una comunicación directa entre los elementos que componen una red de IoT (como la monitorización de un entorno) sin necesidad de intermediarios.
 
 Bajo esta idea se sustenta, por ejemplo, [Filament](https://filament.com), es una empresa que pretende crear un sistema extra seguro de comunicación entre dispositivos hardware, que actualizan la información en tiempo real y cada dispositivo (nodo) tiene la oportunidad de validar la interacción con el entorno (la transacción) y añadir dicha información (token) a la pila común. La seguridad del sistema reside en que los posibles ataques en despliegue hacia los dispositivos accediendo a un server principal mediante reconocimiento no son funcionales, y que los ataques a nodos por separado en el momento justo, a parte de ser complicados y costosos, son prácticamente inócuos si no están enmarcados en el contexto global.
+
+## IV.  Experimento con Ethereum - Programar un sistema de votación
+
+Como se ha mencionado previamente, Ethereum da la oportunidad de desplegar contratos en su plataforma (cartera de ethereum) tanto en un sandbox virtual sin repercusión real como en el sistema principal, usando ETH real. Para la realización de este apartado, he probado el despliegue en virtual, y más tarde he comprado ETH para realizar un experimento a mínimo coste (0'0003 ETH) en el sistema central. Para que el experimento funcione deben tenerse en cuenta los elementos fundamentales del consenso distribuído:
+
+- Los token
+- Los nodos
+- Las transacciones
+
+Para programar y desplegar un token, en su mínima expresión, sería:
+
+```
+contract MiToken {
+    /* esto crea un array con el balance */
+    mapping (address => uint256) public balanceOf;
+
+    /*Inicializa el contrato con una cantidad inicial de tokens para el creador del contrato*/
+    function MiToken(
+        uint256 initialSupply
+        ) {
+        balanceOf[msg.sender] = initialSupply;              // Darle al creador los tokens
+    }
+
+    /* enviar monedas */
+    function transfer(address _to, uint256 _value) {
+        require(balanceOf[msg.sender] >= _value);           // Comprobar que el emisor tiene solvencia
+        require(balanceOf[_to] + _value >= balanceOf[_to]); // Comprobar overflows
+        balanceOf[msg.sender] -= _value;                    // Sustraer del emisor
+        balanceOf[_to] += _value;                           // Añadir al receptor
+    }
+}
+```

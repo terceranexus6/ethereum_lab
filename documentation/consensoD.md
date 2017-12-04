@@ -79,3 +79,4 @@ contract MiToken {
     }
 }
 ```
+Sin embargo, para añadirle algo de complejidad, existen otras variables a tener en cuenta, como declarar el **nombre**, el **símbolo**, notificaciones para clientes, etc. En el [anexo de contratos](https://github.com/terceranexus6/ethereum_lab/tree/master/contracts) se puede encontrar un [ejemplo más completo]() de token. 

@@ -98,7 +98,7 @@ Los detalles de la transferencia también se especifican en los bloques de contra
  Y también pueden automatizarse ventas y compras, función muy útil, por ejemplo, en la aplicación de Consenso Descentralizado de IoT. Para ello, se pueden decinir funciones para ambos procesos y ser llamados en el propio contrato. Por último, pueden definirse funciones para POW (Proof of Work) de forma que agreguemos el esfuerzo matemático para la minería de nuestra moneda. Ets parte es interesante porque podemos añadir la fórmula que deseemos.
 
  ```
- uint PruebaActual = 1; // puedes averiguar la raiz cuadrada de este número?
+ uint PruebaActual = 1; // puedes averiguar el cubo de este número?
 
      function premioAlGenio(uint respuesta, uint siguiente) {
          require(respuesta**3 == PruebaActual); // Si responde mal no continúa
@@ -134,4 +134,4 @@ for (uint i = 0; i <  p.votos.length; ++i) {
 
  ## V. Nuevas fronteras - ideas y conclusiones
 
-Uno de los mayores obstáculos que este sistema tiene que superar antes de incluirse con más profundidad en la tecnología es precisamente la aceptación de los usuarios. SIn embargo, una vez traspasada esta barrera, el modelo resuelve algunos de los problemas fundamentales de las aplicaciones actuales para los casos que se han estudiado en este artículo: la seguridad, la eficiencia y el coste. Es por esto, que más y más empresas se lanzan a 
+Uno de los mayores obstáculos que este sistema tiene que superar antes de incluirse con más profundidad en la tecnología es precisamente la aceptación de los usuarios. SIn embargo, una vez traspasada esta barrera, el modelo resuelve algunos de los problemas fundamentales de las aplicaciones actuales para los casos que se han estudiado en este artículo: la seguridad, la eficiencia y el coste. Es por esto, que más y más empresas se lanzan a

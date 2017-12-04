@@ -4,6 +4,10 @@ Basically, **distributed ledger** is the concept of sharing data evolution contr
 
 The key of this system's movement lays on Token, elements that contains information and are encrypted. This token could act as a currency, vote, message, or anything that can be fixed in Distributed Ledger system. Several startups saw in this model new opportunities and efficient ways to approach to a better security and lower cost solutions. This way, DL is not always pictured in currency terms, but also thought to be an interesting option in energy industry ([Powerledger](https://tge.powerledger.io)), IoT ([Filament](https://filament.com)), communication or Voting systems ([Horizon State](https://horizonstate.com)).
 
+**Beware!** Shitty diagram incoming:
+
+![]()
+
 Ethereum (an uprising cryptocurrency) has a wallet application that let developers freely deploy c++ contracts for token creation or nodes organizations in a virtual sandbox or in the real world. This is a lot of fun and makes the understanding of distributed ledger clearer for developers. The original documentation can be found [here](https://www.ethereum.org/dao) and [here](https://www.ethereum.org/token), and I will sum up how to create a token contract. Also, there's a wider explanation about DL in spanish and some contract examples in my [github repository](https://github.com/terceranexus6/ethereum_lab), please feel free to take a look at it and suggest any issues or PR. The project development is also pictured in a kanban styled board in the repo.
 
 Okay so the basic token contract handles the initial supply of tokens that the owner (the contract developer) has, and the basic transfer funtion that includes checkings and token ownership changing.
@@ -59,4 +63,37 @@ function _transfer(address _from, address _to, uint _value) internal {
     // Asserts are used to use static analysis to find bugs in your code. They should never fail
     assert(balanceOf[_from] + balanceOf[_to] == previousBalances);
 }
+```
+A function to destroy the tokens (the ones the participant owns) from the system (no take back!) or the ones from another participant.
+
+```
+function burn(uint256 _value) public returns (bool success) {
+    require(balanceOf[msg.sender] >= _value);   // Check if the sender has enough
+    balanceOf[msg.sender] -= _value;            // Subtract from the sender
+    totalSupply -= _value;                      // Updates totalSupply
+    Burn(msg.sender, _value);
+    return true;
+}
+
+function burnFrom(address _from, uint256 _value) public returns (bool success) {
+    require(balanceOf[_from] >= _value);                // Check if the targeted balance is enough
+    require(_value <= allowance[_from][msg.sender]);    // Check allowance
+    balanceOf[_from] -= _value;                         // Subtract from the targeted balance
+    allowance[_from][msg.sender] -= _value;             // Subtract from the sender's allowance
+    totalSupply -= _value;                              // Update totalSupply
+    Burn(_from, _value);
+    return true;
+}
+```
+Also, a nice function would be the ones who settles POW (proof of work) for getting the tokens and signing the transactions.
+
+
+```
+uint current = 1; // hehe try to guess the cubic root of the number. Imposible task >:)
+
+    function rewardTheGenious(uint answer, uint next) {
+        require(answer**3 == current); // goes on if it's correct
+        balanceOf[msg.sender] += 1;         // reward the user!
+        current = next;   // next test
+    }
 ```

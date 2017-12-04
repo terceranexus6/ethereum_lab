@@ -133,3 +133,5 @@ for (uint i = 0; i <  p.votos.length; ++i) {
  Para experimentar con nuestros contratos en el sandbox, tan sólo tenemos que incluir el código en la plataforma de ethereum y desplegarlo. Nos saldrán algunas opciones que debemos rellenar, y una vez desplegado, podemos compartir el contrato con otros usuarios. Podemos utilizarlo tanto con nuestro propio token (definido previamente en otro contrato) como usando ETH real.
 
  ## V. Nuevas fronteras - ideas y conclusiones
+
+Uno de los mayores obstáculos que este sistema tiene que superar antes de incluirse con más profundidad en la tecnología es precisamente la aceptación de los usuarios. SIn embargo, una vez traspasada esta barrera, el modelo resuelve algunos de los problemas fundamentales de las aplicaciones actuales para los casos que se han estudiado en este artículo: la seguridad, la eficiencia y el coste. Es por esto, que más y más empresas se lanzan a 
